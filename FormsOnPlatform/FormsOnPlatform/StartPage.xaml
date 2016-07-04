@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormsOnPlatform.StartPage">
+  <!-- Utilizado para definições de plataforma via code behind -->
+  <!--
+  <StackLayout Spacing="1">
+    <Label x:Name="Informacao" HorizontalOptions="Center"/>
+    <BoxView x:Name="Retangulo" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+  </StackLayout>
+  -->
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" Android="8" iOS="0, 20, 0, 0" WinPhone="12, 8"/>
+  </ContentPage.Padding>
+
+  <StackLayout>
+    <Label HorizontalOptions="Center">
+      <Label.Text>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.Android>Estou no Android</OnPlatform.Android>
+          <OnPlatform.iOS>Estou no iOS</OnPlatform.iOS>
+          <OnPlatform.WinPhone>Estou no Windows</OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.Text>
+    </Label>
+    <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <BoxView.Color>
+        <OnPlatform x:TypeArguments="Color">
+          <OnPlatform.Android>Green</OnPlatform.Android>
+          <OnPlatform.iOS>Fuchsia</OnPlatform.iOS>
+          <OnPlatform.WinPhone>#2196F3</OnPlatform.WinPhone>
+        </OnPlatform>
+      </BoxView.Color>
+    </BoxView>
+  </StackLayout>
+  
+</ContentPage>
